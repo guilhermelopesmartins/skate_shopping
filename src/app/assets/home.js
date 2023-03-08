@@ -8,6 +8,7 @@ const app = new (function () {
             let conta = JSON.parse(window.localStorage.getItem("conta"))
             this.botoes.innerHTML += '<button id="botaoSair" onclick="app.sair()">Sair</button>';
             this.botoes.innerHTML += '<button id="botaoCompras" onclick="app.irCompras()">Compras</button>';
+            this.botoes.innerHTML += '<button id="botaoConta" onclick="app.irConta()">Conta</button>';
             this.botoes.innerHTML += `<Text class="letra_barra">${conta[0].nm_nome}</Text>`;
         } else {
             this.botoes.innerHTML += '<button id="botaoLogin" onclick="app.irLogin()">Login</button>';
@@ -80,6 +81,11 @@ const app = new (function () {
             console.log(error);
         })
 
+    }
+
+    this.irConta = () => {
+        window.location.href = "../views/conta.php"
+        
     }
 
     this.irLogin = () => {

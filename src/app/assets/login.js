@@ -13,7 +13,6 @@ const app = new  (function () {
         })
         .then((res) => res.json())
         .then((data) => {
-            debugger
             if (data.length == 0) {
                 alert("Nome de Usuário ou Senha incorreto(s)")
                 return    

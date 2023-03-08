@@ -19,7 +19,7 @@ const app = new  (function () {
         })
         .then((res) => res.json())
         .then((data) => {
-            window.location.href = '../app/views/login.php'
+            window.location.href = '../views/login.php'
         })
         .catch((error) => {
             console.log(error)

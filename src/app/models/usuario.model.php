@@ -59,5 +59,41 @@ require_once "../config/connection.php";//"./app/config/connection.php";
                 echo $th->getMessage();
             }
         }
+
+        public static function excluirUsuario ($id) {
+            try {
+                $sql = "DELETE from skate_shopping.tb_usuario
+                WHERE id_usuario = :id";
+                $stmt = Connection::getConnection()->prepare($sql);
+                $stmt->bindParam(':id', $id);
+                $stmt->execute();
+                return true;
+            } catch (PDOException $th) {
+                echo $th->getMessage();
+            }
+        }
+
+        public static function alterarUsuario ($data) {
+            try {
+                $sql = "UPDATE skate_shopping.tb_usuario SET 
+                    nm_nome = :nome,
+                    nm_login = :login,
+                    senha = :senha,
+                    dt_nascimento = :data_nascimento,
+                    email = :email
+                where id_usuario = :id";
+                $stmt = Connection::getConnection()->prepare($sql);
+                $stmt->bindParam(':nome', $data['nome']);
+                $stmt->bindParam(':login', $data['login']);
+                $stmt->bindParam(':senha', $data['senha']);
+                $stmt->bindParam(':data_nascimento', $data['data_nascimento']);
+                $stmt->bindParam(':email', $data['email']);
+                $stmt->bindParam(':id', $data['id']);
+                $stmt->execute();
+                return true;
+            } catch (PDOException $th) {
+                echo $th->getMessage();
+            }
+        }
     }
 ?>
