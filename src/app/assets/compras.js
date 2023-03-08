@@ -16,6 +16,9 @@ const app = new  (function () {
     this.irHome = () => {
         window.location.href = "../views/home.php"
     }
+    this.irConta = () => {
+        window.location.href = "../views/conta.php"
+    }
     this.mostrarCompras = () => {
         this.titulo.innerHTML += 'Suas compras, ' + JSON.parse(window.localStorage.getItem("conta"))[0].nm_nome
         this.compras = document.getElementById('compras')

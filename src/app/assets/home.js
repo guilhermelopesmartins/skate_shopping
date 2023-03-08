@@ -85,7 +85,6 @@ const app = new (function () {
 
     this.irConta = () => {
         window.location.href = "../views/conta.php"
-        
     }
 
     this.irLogin = () => {

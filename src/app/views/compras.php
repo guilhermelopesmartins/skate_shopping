@@ -19,6 +19,7 @@
         <div id="botoes" class="botoes_esqueda">
         <button id="botaoSair" onclick="app.sair()">Sair</button>
         <button id="botaoHome" onclick="app.irHome()">Home</button>
+        <button id="botaoConta" onclick="app.irConta()">Conta</button>
         <Text id="nome_usuario" class="letra_barra"></Text>
         </div>
   </div>
