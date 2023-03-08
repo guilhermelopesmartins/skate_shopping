@@ -19,27 +19,14 @@ const app = new  (function () {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
-        })
-        .catch((error) => console.log(error))
-    }
-
-    this.loginUsuario = () => {
-        var form = new FormData()
-        form.append("login", this.login.value)
-        form.append("senha", this.senha.value)
-        console.log(form)
-        fetch("../controller/loginUsuario.php", {
-            method: "POST",
-            body: form
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
+            window.location.href = '../app/views/login.php'
         })
         .catch((error) => {
-            alert("Nome de Usuário ou Senha incorreto(s)")
             console.log(error)
+            alert('Não foi possível fazer cadastro.')
         })
+    }
+    this.cancel = () => {
+        window.location.href = '../views/home.php'
     }
 })();

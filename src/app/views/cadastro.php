@@ -23,7 +23,7 @@
         <div class="col-sm-6">
           <h5>Formulario</h5>
           <hr />
-          <form action="javascript:void(0);" onsubmit="app.salvarUsuario()">
+          <form action="javascript:void(0);" onsubmit="app.salvarUsuario()" onreset="app.cancel()">
             <input type="hidden" id="id" />
             <label for="nombres">Nome</label>
             <input

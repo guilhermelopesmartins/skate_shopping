@@ -1,12 +1,12 @@
 <?php
 require_once "../config/connection.php";
     class Compras extends Connection {
-        public static function mostrarCompras() {
+        public static function mostrarCompras($id) {
             try {
-                $sql = "SELECT p.nm_nome, p.descricao, p.preco
-                from skate_shopping.tb_compra c, skate_shopping.tb_produto p
-                where c.id_produto = p.id_produto";
+                $sql = "SELECT p.nm_nome, p.descricao, p.preco, p.tipo from skate_shopping.tb_produto p, skate_shopping.tb_compra c
+                where p.id_produto = c.id_produto and c.id_usuario = :id";
                 $stmt = Connection::getConnection()->prepare($sql);
+                $stmt->bindParam(':id', $id);
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 return $result;

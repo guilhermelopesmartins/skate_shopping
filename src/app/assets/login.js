@@ -25,4 +25,7 @@ const app = new  (function () {
             console.log(error)
         })
     }
+    this.cancel = () => {
+        window.location.href = '../views/home.php'
+    }
 })();

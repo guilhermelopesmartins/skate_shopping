@@ -1,18 +1,23 @@
 const app = new (function () {
-    this.botoes = document.getElementById('barra_botoes')
-    this.info = document.getElementById('barra_info')
+    this.botoes = document.getElementById('botoes')
+
     this.produtos = document.getElementById('produtos')
     this.onLoad = () => {
-        
+        this.botoes.innerHTML = ""
         if (JSON.parse(window.localStorage.getItem("conta"))) {
             let conta = JSON.parse(window.localStorage.getItem("conta"))
-            document.getElementById('nome_usuario').innerHTML += ''
-            document.getElementById('nome_usuario').innerHTML += conta[0].nm_nome;
+            this.botoes.innerHTML += '<button id="botaoSair" onclick="app.sair()">Sair</button>';
+            this.botoes.innerHTML += '<button id="botaoCompras" onclick="app.irCompras()">Compras</button>';
+            this.botoes.innerHTML += `<Text class="letra_barra">${conta[0].nm_nome}</Text>`;
+        } else {
+            this.botoes.innerHTML += '<button id="botaoLogin" onclick="app.irLogin()">Login</button>';
+            this.botoes.innerHTML += '<button id="botaoCadastro" onclick="app.irCadastro()">Criar Conta</button>';
         }
     }
 
     this.sair = () => {
-
+        window.localStorage.removeItem("conta")
+        this.onLoad()
     }
     
     this.mostrarProdutos = () => {
@@ -22,17 +27,30 @@ const app = new (function () {
             console.log(data);
             this.produtos.innerHTML = "";
             data.forEach((e) => {
+                let img = ''
+                switch (e.tipo) {
+                    case 'shap':
+                        img = '../../public/imagens/shapes.jpg'
+                        break;
+                    case 'truc':
+                        img = '../../public/imagens/truck.jpg'
+                        break;
+                    case 'roda':
+                        img = '../../public/imagens/rodinha.jpg'
+                        break;
+
+                }
                 this.produtos.innerHTML += `
                 <div class="card">
-                <img height="400px" src="../../public/imagens/shapes.jpg" alt="Avatar" style="width:100%">
-                <div class="container">
+                <img height="400px" src=${img} style="width:100%">
+                <div class="inside_contener">
                     <h4><b>${e.nm_nome}</b></h4> 
                     <p>${e.descricao}</p> 
-                    <p>${e.preco}</p> 
+                    <p>Valor: R$${e.preco}</p> 
                 </div>
                 <button onclick="app.comprar(${e.id_produto})">Comprar produto</button>
                 </div>
-              `;
+                `;
             });
         }).catch((error) => {
             console.log(error)
@@ -40,6 +58,10 @@ const app = new (function () {
     }
 
     this.comprar = (id) => {
+        if(!JSON.parse(window.localStorage.getItem("conta"))) {
+            alert('Você precisa estar logado para poder comprar qualquer item.')
+            return
+        }
         const date = new Date();
         let formatDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
         var form = new FormData();

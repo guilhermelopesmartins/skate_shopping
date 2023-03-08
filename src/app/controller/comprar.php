@@ -5,5 +5,5 @@ $arrayName = array(
     'id_usuario' => $_POST['id_usuario'],
     'dt_compra' => $_POST['dt_compra']
 );
-echo json_encode(Produto::comprar($arrayName));
+echo json_encode(Compras::comprar($arrayName));
 ?>

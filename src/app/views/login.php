@@ -24,7 +24,7 @@
         <div class="col-sm-6">
           <h5>Formulario</h5>
           <hr />
-          <form action="javascript:void(0);" onsubmit="app.loginUsuario()">
+          <form action="javascript:void(0);" onsubmit="app.loginUsuario()" onreset="app.cancel()">
             <input type="hidden" id="id" />
             <label for="login">Login</label>
             <input

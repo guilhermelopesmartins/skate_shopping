@@ -14,7 +14,15 @@
 </head>
 
 <body>
-  <h1 id=titulo></h1>
+  <div class="container">
+      <div class="barra">
+        <div id="botoes" class="botoes_esqueda">
+        <button id="botaoSair" onclick="app.sair()">Sair</button>
+        <button id="botaoHome" onclick="app.irHome()">Home</button>
+        <Text id="nome_usuario" class="letra_barra"></Text>
+        </div>
+  </div>
+  <h1 style="margin-top:50px;" id=titulo></h1>
 
   <section id="compras" class="container">
 

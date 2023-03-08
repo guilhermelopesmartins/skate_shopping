@@ -21,25 +21,22 @@
   <body>
     <div class="container">
         <div class="barra">
-            <div id="barra_botoes" class="botoes_esqueda">
-                <button onclick="app.sair()">Sair</button>
-                <button onclick="app.irCompras()">Compras</button>
-                <button onclick="app.irLogin()">Login</button>
-                <button onclick="app.irCadastro()">Criar Conta</button>
-                <Text class="letra_barra" id="nome_usuario"></Text>
+            <div id="botoes" class="botoes_esqueda">
+                
             </div>
         </div>
     </div>
     <img class="imagem_grande" width="100%" src="../../public/imagens/imagem_home.jpg" alt="">
     <h1>Produtos Disponiveis</h1>
-    <section id="produtos" class="container">
-        <!-- <div class="card">
-        <img src="img_avatar.png" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>John Doe</b></h4> 
-            <p>Architect & Engineer</p> 
-        </div>
-        </div> -->
+    <section id="produtos" class="container" style="margin-bottom: 100px ">
+
+    </section>
+    <h1>Pratrocinado: Luan de Oliveira</h1>
+    <section class="container" style="margin-bottom: 30px;">
+    <iframe width="949" height="534" src="https://www.youtube.com/embed/BmX9kwHKLyg" 
+        title="Strike and Destroy - Luan Oliveira" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>
     </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="../assets/home.js"></script>
