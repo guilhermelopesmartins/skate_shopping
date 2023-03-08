@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login</title>
+    <title>SKATING HARD - HOME</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -21,19 +21,17 @@
   <body>
     <div class="container">
         <div class="barra">
-            
             <div id="barra_botoes" class="botoes_esqueda">
+                <button onclick="app.sair()">Sair</button>
+                <button onclick="app.irCompras()">Compras</button>
                 <button onclick="app.irLogin()">Login</button>
                 <button onclick="app.irCadastro()">Criar Conta</button>
-                <button onclick="app.sair()">Sair</button>
                 <Text class="letra_barra" id="nome_usuario"></Text>
-                
             </div>
-
         </div>
     </div>
     <img class="imagem_grande" width="100%" src="../../public/imagens/imagem_home.jpg" alt="">
-    
+    <h1>Produtos Disponiveis</h1>
     <section id="produtos" class="container">
         <!-- <div class="card">
         <img src="img_avatar.png" alt="Avatar" style="width:100%">
