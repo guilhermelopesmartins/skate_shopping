@@ -13,10 +13,15 @@ const app = new  (function () {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
+            debugger
+            if (data.length == 0) {
+                alert("Nome de Usuário ou Senha incorreto(s)")
+                return    
+            }
+            window.localStorage.setItem("conta", JSON.stringify(data))
+            window.location.href = "../views/home.php"
         })
         .catch((error) => {
-            alert("Nome de Usuário ou Senha incorreto(s)")
             console.log(error)
         })
     }

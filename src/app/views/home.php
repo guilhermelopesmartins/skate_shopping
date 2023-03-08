@@ -16,18 +16,33 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="row justify-content-center p-5">
-        <div class="col-sm-6">
-          <h5>Menu</h5>
-          <hr />
-            <button onclick="app.irLogin()">Login</button>
-            <button onclick="app.irCadastro()">Criar Conta</button>
+        <div class="barra">
+            
+            <div id="barra_botoes" class="botoes_esqueda">
+                <button onclick="app.irLogin()">Login</button>
+                <button onclick="app.irCadastro()">Criar Conta</button>
+                <button onclick="app.sair()">Sair</button>
+                <Text class="letra_barra" id="nome_usuario"></Text>
+                
+            </div>
+
         </div>
-      </div>
     </div>
+    <img class="imagem_grande" width="100%" src="../../public/imagens/imagem_home.jpg" alt="">
+    
+    <section id="produtos" class="container">
+        <!-- <div class="card">
+        <img src="img_avatar.png" alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4><b>John Doe</b></h4> 
+            <p>Architect & Engineer</p> 
+        </div>
+        </div> -->
+    </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="../assets/home.js"></script>
     <script
