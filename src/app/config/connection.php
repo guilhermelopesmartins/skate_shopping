@@ -15,8 +15,8 @@
                 port={$connection->port};dbname={$connection->dbname};user={$connection->user};
                 password={$connection->password}");
                 $connection->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                // return $connection->connect;
-                echo "connection succes";
+                return $connection->connect;
+                //echo "connection succes";
             } catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
