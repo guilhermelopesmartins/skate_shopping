@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row justify-content-center p-5">
         <div class="col-sm-6">
-          <h5>Formulario</h5>
+          <h5>Alterar dados</h5>
           <hr />
           <form action="javascript:void(0);" onsubmit="app.alterarConta()" onreset="app.cancel()">
             <input type="hidden" id="id" />

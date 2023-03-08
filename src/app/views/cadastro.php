@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row justify-content-center p-5">
         <div class="col-sm-6">
-          <h5>Formulario</h5>
+          <h5>Cadastro</h5>
           <hr />
           <form action="javascript:void(0);" onsubmit="app.salvarUsuario()" onreset="app.cancel()">
             <input type="hidden" id="id" />
